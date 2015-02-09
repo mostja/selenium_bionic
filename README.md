@@ -1,3 +1,3 @@
 # Khalash_Bionic
 Selenium qs project
-bla bla
+bla bla conflict
