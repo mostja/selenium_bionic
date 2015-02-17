@@ -11,9 +11,6 @@ import java.nio.charset.StandardCharsets;
 
 import static org.testng.reporters.Files.readFile;
 
-/**
- * Created by c2614 on 16.02.2015.
- */
 public class Test3 {
 
     @BeforeTest
@@ -25,29 +22,21 @@ public class Test3 {
         catch (Exception e){
             e.printStackTrace();
         }
-        writer.println("Ahalay mahalay 12.39");
+        writer.println("Ahalay mahalay 12.25");
         writer.close();
 
     }
     @Test
     public void someTests() throws IOException{
         BufferedReader br = new BufferedReader(new FileReader("Test.txt"));
-        String actual ="";
-        String expected = ".*\\d+(\\.\\d+).*";
+        String text = "";
+        String pattern = ".*\\d+(\\.\\d+).*";
         try {
-            StringBuilder sb = new StringBuilder();
-            String line = br.readLine();
-
-            while (line != null) {
-                sb.append(line);
-                sb.append(System.lineSeparator());
-                line = br.readLine();
-            }
-            actual = sb.toString();
+            text = br.readLine();
         } finally {
             br.close();
         }
-        Assert.assertTrue(actual.matches(expected));
+        Assert.assertTrue(text.matches(pattern));
     }
     @AfterTest
     public boolean deleteFile(){
