@@ -5,7 +5,7 @@
 
     <test name="SmokeTest">
         <classes>
-            <class name="functional.Test3" />
+            <class name="functional.WikiTest" />
         </classes>
     </test>
 </suite>
