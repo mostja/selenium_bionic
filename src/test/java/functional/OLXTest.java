@@ -6,11 +6,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
 
 /**
- * Created by c2614 on 18.02.2015.
+ * Created by Mostja on 22-Feb-15.
  */
-public class WikiTest {
+public class OLXTest {
     public WebDriver driver;
 
     @BeforeSuite
@@ -21,9 +22,10 @@ public class WikiTest {
     public void shutEnv(){
         driver.quit();
     }
-
-    public void testWiki(){
-        driver.get("https://ru.wikipedia.org/wiki");
-        Assert.assertTrue(driver.findElement(By.className("mw-wiki-logo")).isDisplayed());
+    @Test
+    public void testSearch(){
+        driver.get("http://olx.ua/");
+        Assert.assertTrue(driver.findElement(By.id("headerSearch")).isDisplayed());
+        driver.findElement(By.id("headerSearch")).sendKeys("canon 60d");
     }
 }
