@@ -15,7 +15,7 @@ public class DataGenerator {
     }
 
     public static String getRandomString(int length){
-        return RandomStringUtils.randomAlphanumeric(length);
+        return RandomStringUtils.randomAlphanumeric(length).toLowerCase();
     }
 
     public static String getRandomEmail(){

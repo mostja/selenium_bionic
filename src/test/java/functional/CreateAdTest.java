@@ -20,7 +20,7 @@ public class CreateAdTest extends AbstractTest {
         String title = DataGenerator.getRandomString(10);
         int size = DataGenerator.getRandomInt(50);
         String description = DataGenerator.getRandomString(55);
-        File photoFile = new File("image.jpg");
+        File photoFile = new File("D:\\Selenium\\Khalash_Bionic\\src\\main\\resources\\image.jpg");
         String photoUrl = photoFile.getAbsolutePath();
         String name = DataGenerator.getRandomString(10);
         String email = DataGenerator.getRandomEmail();

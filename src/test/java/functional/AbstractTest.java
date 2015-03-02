@@ -1,11 +1,15 @@
 package functional;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import pages.HomePage;
+import utils.PropertyLoader;
+import webddriver.Browser;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -14,9 +18,11 @@ import java.util.concurrent.TimeUnit;
 public abstract class AbstractTest {
     protected WebDriver driver;
     protected HomePage home;
+    public Browser browser;
 
     @BeforeSuite
     public void initEnv(){
+
         driver = new FirefoxDriver();
         home = new HomePage(driver).open();
         driver.manage().window().maximize();
@@ -24,8 +30,8 @@ public abstract class AbstractTest {
 
     @AfterSuite
     public void shutEnv(){
-//        if (driver!= null){
-//            driver.quit();
-//        }
+        if (driver!= null){
+            driver.quit();
+        }
     }
 }
