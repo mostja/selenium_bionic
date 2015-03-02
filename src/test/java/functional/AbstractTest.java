@@ -22,7 +22,13 @@ public abstract class AbstractTest {
 
     @BeforeSuite
     public void initEnv(){
-
+//        if(PropertyLoader.loadProperty("browser").equals("firefox"))
+//            browser = new Browser(new FirefoxDriver());
+//        else if (PropertyLoader.loadProperty("browser").equals("chrome")){
+//            File file = new File("D:\\Selenium\\chromedriver.exe");
+//            System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
+//            browser = new Browser(new ChromeDriver());
+//        }
         driver = new FirefoxDriver();
         home = new HomePage(driver).open();
         driver.manage().window().maximize();
