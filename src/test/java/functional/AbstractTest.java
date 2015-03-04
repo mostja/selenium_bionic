@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeSuite;
 import pages.HomePage;
 import utils.PropertyLoader;
 import webddriver.Browser;
+import webddriver.BrowserFactory;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -22,13 +23,8 @@ public abstract class AbstractTest {
 
     @BeforeSuite
     public void initEnv(){
-//        if(PropertyLoader.loadProperty("browser").equals("firefox"))
-//            browser = new Browser(new FirefoxDriver());
-//        else if (PropertyLoader.loadProperty("browser").equals("chrome")){
-//            File file = new File("D:\\Selenium\\chromedriver.exe");
-//            System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
-//            browser = new Browser(new ChromeDriver());
-//        }
+//    browser = BrowserFactory.create(PropertyLoader.loadProperty("browser"));
+
         driver = new FirefoxDriver();
         home = new HomePage(driver).open();
         driver.manage().window().maximize();
@@ -36,8 +32,8 @@ public abstract class AbstractTest {
 
     @AfterSuite
     public void shutEnv(){
-//        if (driver!= null){
-//            driver.quit();
-//        }
+        if (driver!= null){
+            driver.quit();
+        }
     }
 }
