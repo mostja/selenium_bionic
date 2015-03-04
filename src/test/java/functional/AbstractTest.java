@@ -36,8 +36,8 @@ public abstract class AbstractTest {
 
     @AfterSuite
     public void shutEnv(){
-        if (driver!= null){
-            driver.quit();
-        }
+//        if (driver!= null){
+//            driver.quit();
+//        }
     }
 }

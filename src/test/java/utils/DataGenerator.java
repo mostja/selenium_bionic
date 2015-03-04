@@ -1,4 +1,4 @@
-package pages;
+package utils;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -19,6 +19,6 @@ public class DataGenerator {
     }
 
     public static String getRandomEmail(){
-        return getRandomString(10) + "@" + getRandomString(5) + "." + getRandomString(3);
+        return getRandomString(10) + "@" + getRandomString(5) + ".com";
     }
 }

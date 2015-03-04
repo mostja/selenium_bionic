@@ -5,7 +5,7 @@
 
     <test name="SmokeTest">
         <classes>
-            <class name="functional.CreateAdTest" />
+            <class name="negative.AdvertisementTests" />
         </classes>
     </test>
 </suite>
