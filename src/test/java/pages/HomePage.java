@@ -20,7 +20,7 @@ public class HomePage extends AbstractPage {
 
     public HomePage open(){
         driver.get("http://olx.ua/");
-        return this;
+       return this;
     }
 
     public KidsWorldPage openKidsWorld() {
