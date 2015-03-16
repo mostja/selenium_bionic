@@ -68,6 +68,7 @@ public class CreateAdPage extends AbstractPage{
 
     public void acceptLicenseAgreement(){
         driver.findElement(ACCEPT_AGREEMENT_CHECKBOX).click();
+        logger.info("Checked license acceptance");
     }
 
     public ReviewAdPage createAd(){
@@ -76,11 +77,13 @@ public class CreateAdPage extends AbstractPage{
         return new ReviewAdPage(driver);
     }
 
-    private void setTitle(String title){
+    public void setTitle(String title){
+        logger.debug("Setting Title : " + title);
         driver.findElement(TITLE_TEXT_FIELD).sendKeys(title);
     }
 
     private void setRubric(){
+        logger.info("Choosing boys dress rubric");
         driver.findElement(RUBRIC_DROPDOWN).click();
         waitAndClick(KIDS_WORLD_RUBRIC);
         waitAndClick(KIDS_DRESS_RUBRIC);
@@ -92,24 +95,29 @@ public class CreateAdPage extends AbstractPage{
     }
 
     private void setPrise(){
+        logger.info("Setting prise: free of charge");
         waitAndClick(FREE_OF_CHARGE_PRISE);
     }
 
     private void setState(){
+        logger.info("Choosing State: second hand");
         driver.findElement(STATE_DROPDOWN).click();
         driver.findElement(SECOND_HAND).click();
     }
 
-    private void setSize(int size){
+    public void setSize(int size){
+        logger.debug("Setting Size value: " + size);
         driver.findElement(SIZE_TEXT_FIELD).sendKeys(Integer.toString(size));
     }
 
     private void setBusiness(){
+        logger.info("Setting Business ");
         driver.findElement(BUSINESS_DROPDOWN).click();
         driver.findElement(PRIVATE_PERSON).click();
     }
 
-    private void setDescription(String description){
+    public void setDescription(String description){
+        logger.debug("Setting Description value: " + "\"" + description + "\"");
         driver.findElement(DESCRIPTION_TEXTFIELD).sendKeys(description);
     }
 
@@ -139,17 +147,20 @@ public class CreateAdPage extends AbstractPage{
     }
 
     private void setRegion(){
+        logger.info("Choosing Vinnica region");
         driver.findElement(REGION_DROPDOWN).click();
         driver.findElement(VINNYTSIA_REGION).click();
         driver.findElement(SUBREGION_DROPDOWN).click();
         driver.findElement(BAR_SUBREGION).click();
     }
 
-    private void setName(String name){
+    public void setName(String name){
+        logger.debug("Setting Name value: " + name);
         driver.findElement(NAME_TEXT_FIELD).sendKeys(name);
     }
 
-    private void setEmail(String email){
+    public void setEmail(String email){
+        logger.debug("Setting Email value: " + email);
         driver.findElement(EMAIL_TEXT_FIELD).sendKeys(email);
     }
 

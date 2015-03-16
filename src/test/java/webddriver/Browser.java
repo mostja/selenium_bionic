@@ -22,9 +22,7 @@ public class Browser implements WebDriver {
     }
 
     @Override
-    public void get(String s) { driver.get(s);
-
-    }
+    public void get(String s) { driver.get(s);    }
 
     @Override
     public String getCurrentUrl() {
@@ -56,13 +54,13 @@ public class Browser implements WebDriver {
     }
 
     @Override
-    public void close() { driver.close();
-
+    public void close() {
+        driver.close();
     }
 
     @Override
-    public void quit() {driver.quit();
-
+    public void quit() {
+        driver.quit();
     }
 
     @Override

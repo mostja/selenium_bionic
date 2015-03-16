@@ -12,6 +12,7 @@ import pages.ReviewAdPage;
 public class CreateAdTest extends AbstractTest {
     @Test
     public void createAdTest(){
+        logger.info("Opening Create Ad Page");
         CreateAdPage createAd = home.openCreateAd();
         createAd.setAd(new Advertisement());
         createAd.acceptLicenseAgreement();

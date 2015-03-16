@@ -18,7 +18,9 @@ public class BrowserFactory {
         if("firefox".equals(name))
             browser = new Browser(new FirefoxDriver());
         else if ("chrome".equals(name)){
-            File file = new File("D:\\Selenium\\chromedriver.exe");
+            String projectPath = PropertyLoader.loadProperty("project.path");
+            String filePath = "/src/main/resources/chromedriver.exe";
+            File file = new File(projectPath+filePath);
             System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
             browser = new Browser(new ChromeDriver());
         } else
